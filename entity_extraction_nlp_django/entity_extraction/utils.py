@@ -6,6 +6,7 @@ from pprint import pprint
 
 import en_core_web_sm
 nlp = en_core_web_sm.load()
+nlp_keyword = spacy.load("en_core_sci_lg")
 
 
 def naturalLP(doc):
@@ -30,3 +31,9 @@ def naturalLPlist(doc):
     # html = displacy.render(nlp(doc), jupyter=True, style='ent')
 
     return dick
+
+def keyextract(doc):
+
+    doc = nlp_keyword(doc)
+
+    return doc.ents

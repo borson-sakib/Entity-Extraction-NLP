@@ -29,6 +29,7 @@ def index(request):
 
         html = naturalLP(text)
         text = naturalLPlist(text)
+        keyext = keyextract(text)
         soup = BeautifulSoup(html, 'html.parser')
         # div = soup.find('div',{'class':'entities'})
         div = soup.find('mark')
@@ -39,7 +40,7 @@ def index(request):
 
         print(type(div))
         print(div)
-        return render(request,'base.html',{'html':div,'text':text})
+        return render(request,'base.html',{'html':keyext,'text':text})
 
     html = None
     text = None

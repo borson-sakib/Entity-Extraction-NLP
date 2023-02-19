@@ -13,7 +13,7 @@ from django.contrib.auth.middleware import AuthenticationMiddleware
 
 urlpatterns = [
 
-    path('index', index, name="index"),
+    path('', index, name="index"),
     path('index2', index2, name="index2"),
    
 
